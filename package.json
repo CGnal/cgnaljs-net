@@ -1,0 +1,74 @@
+{
+    "author": {
+        "name": "CGnal s.r.l.",
+        "mail": "info@cgnal.com",
+        "url": "https://cgnal.com/"
+    },
+    "bugs": "https://github.com/CGnal/cgnaljs-net/issues",
+    "contributors": [
+        {
+            "name": "Andrea Scartabelli",
+            "mail": "andrea.scartabelli@gmail.com"
+        }
+    ],
+    "description": "Network utilities for CGnal's JavaScript projects",
+    "engines": {
+        "node": ">=12.0.0"
+    },
+    "exports": {
+        "./http": {
+            "default": "src/http/index.js"
+        }
+    },
+    "files": [
+        "src",
+        "!src/**/__{mocks,tests}__",
+        "!src/**/.DS_Store"
+    ],
+    "homepage": "https://github.com/CGnal/cgnaljs-net",
+    "keywords": [
+        "ajax",
+        "http",
+        "network",
+        "superagent",
+        "xhr"
+    ],
+    "license": "MIT",
+    "name": "@cgnal/net",
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CGnal/cgnaljs-net.git"
+    },
+    "scripts": {
+        "coverage": "gulp test:coverage",
+        "docs": "gulp docs",
+        "lint": "gulp lint",
+        "test": "gulp test"
+    },
+    "sideEffects": false,
+    "version": "0.1.0",
+    "dependencies": {
+        "@babel/runtime-corejs3": "^7.16.3",
+        "core-js": "^3.19.2",
+        "lamb": "^0.60.0",
+        "superagent": "^6.1.0"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.16.4",
+        "@cgnal/eslint-config": "^0.1.1",
+        "@jsdevtools/version-bump-prompt": "^6.1.0",
+        "del": "^6.0.0",
+        "docdash": "^1.2.0",
+        "eslint-plugin-import": "^2.25.3",
+        "eslint-plugin-jsdoc": "^37.0.3",
+        "gulp": "^4.0.2",
+        "gulp-eslint-new": "^1.0.0",
+        "gulp-jest": "^4.0.4",
+        "gulp-jsdoc3": "^3.0.0",
+        "gulp-shell": "^0.8.0",
+        "jest": "^27.4.2"
+    }
+}

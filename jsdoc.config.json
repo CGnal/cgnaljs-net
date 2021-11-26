@@ -1,0 +1,49 @@
+{
+    "docdash": {
+        "menu": {
+            "Github repository": {
+                "class":"menu-item",
+                "href": "https://github.com/CGnal/cgnaljs-net",
+                "target": "_blank"
+            }
+        },
+        "meta": {
+            "title": "@cgnal/net",
+            "description": "Network utilities for CGnal's JavaScript projects",
+            "keyword": ""
+        },
+        "scripts": [
+            "styles/template-cgnal.css",
+            "styles/prettify-cgnal.css"
+        ],
+        "search": true,
+        "sort": true,
+        "typedefs": true
+    },
+    "opts": {
+        "template": "node_modules/docdash",
+        "encoding": "utf8",
+        "destination": "./docs/",
+        "recurse": true
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "source": {
+        "include": ["./jsdoc.typedefs.js", "./README.md"],
+        "excludePattern": "(node_modules|__tests__)"
+    },
+    "tags": {
+        "allowUnknownTags": ["category"],
+        "dictionaries": ["jsdoc", "closure"]
+    },
+    "templates": {
+        "default": {
+            "staticFiles": {
+                "include": [
+                    "./static"
+                ]
+            }
+        }
+    }
+}

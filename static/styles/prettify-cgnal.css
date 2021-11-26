@@ -1,0 +1,51 @@
+.pln {
+    color: #333;
+}
+
+/* string content */
+.str {
+    color: #080;
+}
+
+/* a keyword */
+.kwd {
+    color: #369;
+    font-weight: bold;
+}
+
+/* a comment */
+.com {
+    color: #998;
+    font-style: italic;
+}
+
+/* a type name */
+.typ {
+    color: #458;
+    font-weight: bold;
+}
+
+/* a literal value */
+.lit {
+    color: #8f0000;
+}
+
+/* punctuation */
+.pun {
+    color: #369;
+}
+
+/* lisp open bracket */
+.opn {
+    color: #000;
+}
+
+/* lisp close bracket */
+.clo {
+    color: #000;
+}
+
+/* a variable name */
+.var {
+    color: #57a3d5;
+}
