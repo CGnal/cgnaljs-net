@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Home - @cgnal/net</title>
+    
+    <meta name="description" content="Network utilities for CGnal's JavaScript projects" />
+    
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h2><a class="menu-item" href="https://github.com/CGnal/cgnaljs-net" target="_blank" >Github repository</a></h2><h3>Classes</h3><ul><li><a href="module-@cgnal_net_http.HttpTransport.html">HttpTransport</a><ul class='methods'><li data-type='method'><a href="module-@cgnal_net_http.HttpTransport.html#addHeader">addHeader</a></li><li data-type='method'><a href="module-@cgnal_net_http.HttpTransport.html#delete">delete</a></li><li data-type='method'><a href="module-@cgnal_net_http.HttpTransport.html#get">get</a></li><li data-type='method'><a href="module-@cgnal_net_http.HttpTransport.html#head">head</a></li><li data-type='method'><a href="module-@cgnal_net_http.HttpTransport.html#patch">patch</a></li><li data-type='method'><a href="module-@cgnal_net_http.HttpTransport.html#post">post</a></li><li data-type='method'><a href="module-@cgnal_net_http.HttpTransport.html#put">put</a></li><li data-type='method'><a href="module-@cgnal_net_http.HttpTransport.html#removeHeader">removeHeader</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-@cgnal_net_http.html">@cgnal/net/http</a></li></ul><h3>Global</h3><ul><li><a href="global.html#arguments">arguments</a></li><li><a href="global.html#Array">Array</a></li><li><a href="global.html#ArrayLike">ArrayLike</a></li><li><a href="global.html#Boolean">Boolean</a></li><li><a href="global.html#Date">Date</a></li><li><a href="global.html#FormData">FormData</a></li><li><a href="global.html#function">function</a></li><li><a href="global.html#Number">Number</a></li><li><a href="global.html#Object">Object</a></li><li><a href="global.html#Promise">Promise</a></li><li><a href="global.html#RegExp">RegExp</a></li><li><a href="global.html#String">String</a></li><li><a href="global.html#SuperAgentRequest">SuperAgentRequest</a></li><li><a href="global.html#Undefined">Undefined</a></li></ul>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+    <section class="package">
+        <h3> </h3>		
+    </section>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    <section class="readme usertext">
+        <article><h1>CGnal Network utils</h1>
+<p><a href="https://www.npmjs.com/package/@cgnal/net"><img src="https://img.shields.io/npm/v/@cgnal/net.svg" alt="NPM version"></a> <a href="https://github.com/CGnal/cgnaljs-net/actions/workflows/checks.yml"><img src="https://github.com/CGnal/cgnaljs-net/actions/workflows/checks.yml/badge.svg" alt="Checks Status"></a> <a href="https://coveralls.io/github/CGnal/cgnaljs-net"><img src="https://img.shields.io/coveralls/CGnal/cgnaljs-net/master.svg" alt="Coveralls Status"></a></p>
+<p>Network utilities for <a href="https://cgnal.com">CGnal</a>'s JavaScript projects.</p>
+<h2>Documentation.</h2>
+<p>The API documentation is published <a href="https://cgnal.github.io/cgnaljs-net/">here</a>.</p>
+<h2>Installation and usage</h2>
+<pre class="prettyprint source lang-bash"><code>npm install @cgnal/net --save
+</code></pre>
+<p>The library doesn't come with a predefined build, but rather relies on the application that uses it to &quot;set the rules&quot;.</p>
+<p><a href="https://github.com/babel/babel/tree/main/packages/babel-runtime-corejs3"><code>@babel/runtime-corejs3</code></a> and <a href="https://github.com/zloirock/core-js"><code>core-js</code></a> are set as dependencies, so you can make your application build it for your intended targets and eventually add automatically the necessary polyfills.</p>
+<p>Example of possible babel configuration:</p>
+<pre class="prettyprint source lang-javascript"><code>// ...
+
+&quot;presets&quot;: [
+    [&quot;@babel/preset-env&quot;, {
+        &quot;corejs&quot;: &quot;3.19&quot;,
+        &quot;modules&quot;: &quot;auto&quot;,
+        &quot;useBuiltIns&quot;: &quot;usage&quot;
+    }]
+],
+&quot;plugins&quot;: [
+    [&quot;@babel/plugin-transform-runtime&quot;, { &quot;corejs&quot;: 3, &quot;proposals&quot;: true }],
+]
+
+// ...
+</code></pre>
+<h2>NPM scripts and Gulp tasks</h2>
+<p>Only a few Gulp tasks are exposed as npm scripts, as such scripts are only a facilitation to run tasks without having to install <a href="https://www.npmjs.com/package/gulp-cli"><code>gulp-cli</code></a> as a global module.
+Running tasks in a CI server, for example.</p>
+<p>If you want to use <code>gulp</code> from the command line, you should <code>npm install gulp-cli -g</code> first, or, to avoid installing it, prefix your commands with <code>npx</code>, e.g. <code>npx gulp test</code>.</p>
+<h3>NPM scripts</h3>
+<ul>
+<li><code>npm run coverage</code> runs the <code>gulp test:coverage</code> task.</li>
+<li><code>npm run docs</code> runs the <code>gulp docs</code> task.</li>
+<li><code>npm run lint</code> runs the <code>gulp lint</code> task.</li>
+<li><code>npm test</code> runs the <code>gulp test</code> task.</li>
+</ul>
+<h3>Gulp tasks</h3>
+<ul>
+<li><code>gulp</code>: the default task runs the <code>gulp lint</code> and <code>gulp test:coverage</code> in sequence.</li>
+<li><code>gulp bump</code> updates version number using an interactive shell.</li>
+<li><code>gulp clean</code>: deletes the docs and coverage folders (<code>./docs</code>, <code>./coverage</code>).</li>
+<li><code>gulp clean:coverage</code>: deletes the coverage folder (<code>./coverage</code>).</li>
+<li><code>gulp clean:docs</code>: deletes the docs folder (<code>./docs</code>).</li>
+<li><code>gulp docs</code>: generates the documentation in the <code>./docs</code> folder.</li>
+<li><code>gulp lint</code>: runs linting for code and test, in sequence.</li>
+<li><code>gulp lint:code</code>: runs linting for code only.</li>
+<li><code>gulp lint:tests</code>: runs linting for tests only.</li>
+<li><code>gulp test</code>: runs the test suite.</li>
+<li><code>gulp test:coverage</code>: runs tests and generates the code coverage report in <code>./coverage</code>.</li>
+<li><code>gulp test:verbose</code>: runs the test suite in verbose mode.</li>
+<li><code>gulp test:watch</code>: runs the test suite in watch mode.</li>
+</ul></article>
+    </section>
+
+
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Tue Nov 30 2021 13:34:47 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+    <link type="text/css" rel="stylesheet" href="styles/template-cgnal.css">
+    
+    <link type="text/css" rel="stylesheet" href="styles/prettify-cgnal.css">
+    
+</body>
+</html>
