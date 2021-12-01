@@ -16,9 +16,7 @@
         "node": ">=12.0.0"
     },
     "exports": {
-        "./http": {
-            "default": "src/http/index.js"
-        }
+        "./http": "./src/http/index.js"
     },
     "files": [
         "src",
@@ -49,7 +47,7 @@
         "test": "gulp test"
     },
     "sideEffects": false,
-    "version": "0.1.0",
+    "version": "0.1.1",
     "dependencies": {
         "@babel/runtime-corejs3": "^7.16.3",
         "core-js": "^3.19.2",
@@ -63,7 +61,7 @@
         "del": "^6.0.0",
         "docdash": "^1.2.0",
         "eslint-plugin-import": "^2.25.3",
-        "eslint-plugin-jsdoc": "^37.0.3",
+        "eslint-plugin-jsdoc": "^37.1.0",
         "gulp": "^4.0.2",
         "gulp-eslint-new": "^1.0.0",
         "gulp-jest": "^4.0.4",

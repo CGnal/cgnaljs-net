@@ -37,6 +37,39 @@ Example of possible babel configuration:
 // ...
 ```
 
+## Usage with Jest
+
+[Jest](https://jestjs.io/) currently (v27.4.2 at the time of writing) doesn't play nice with ES modules and [`package.json` exports](https://nodejs.org/api/packages.html#subpath-exports).
+See [this issue](https://github.com/facebook/jest/issues/9771) about the exports support status.
+Both problems are easily solved for the time being with a config tweak and the support of [`jest-node-exports-resolver`](https://github.com/k-g-a/jest-node-exports-resolver).
+
+Example of Jest configuration:
+
+```javascript
+// ...
+
+resolver: "jest-node-exports-resolver",
+transformIgnorePatterns: ["node_modules/(?!@cgnal)"],
+
+// ...
+```
+
+## Usage with `eslint-plugin-import`
+
+[`eslint-plugin-import`](https://github.com/import-js/eslint-plugin-import) still have to support the aforementioned exports field.
+You can refer to [this issue](https://github.com/import-js/eslint-plugin-import/issues/1868) to track the situation.
+In the meanwhile you can add a custom resolver such as [`@tophat/eslint-import-resolver-require`](https://github.com/tophat/eslint-import-resolver-require) and tweak your configuration to use it:
+
+```javascript
+// ...
+
+"settings": {
+    "import/resolver": "@tophat/eslint-import-resolver-require",
+}
+
+// ...
+```
+
 ## NPM scripts and Gulp tasks
 
 Only a few Gulp tasks are exposed as npm scripts, as such scripts are only a facilitation to run tasks without having to install [`gulp-cli`](https://www.npmjs.com/package/gulp-cli) as a global module.
