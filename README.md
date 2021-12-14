@@ -39,11 +39,24 @@ Example of possible babel configuration:
 
 ## Usage with Jest
 
-[Jest](https://jestjs.io/) currently (v27.4.2 at the time of writing) doesn't play nice with ES modules and [`package.json` exports](https://nodejs.org/api/packages.html#subpath-exports).
-See [this issue](https://github.com/facebook/jest/issues/9771) about the exports support status.
-Both problems are easily solved for the time being with a config tweak and the support of [`jest-node-exports-resolver`](https://github.com/k-g-a/jest-node-exports-resolver).
+[Jest](https://jestjs.io/) currently (v27.4.2 at the time of writing) doesn't play nice with ES modules and [`package.json` exports](https://nodejs.org/api/packages.html#subpath-exports). See [this issue](https://github.com/facebook/jest/issues/9771) about the exports support status.
 
-Example of Jest configuration:
+Both problems are easily solved for the time being with a config tweak and, optionally, the support of [`jest-node-exports-resolver`](https://github.com/k-g-a/jest-node-exports-resolver).
+
+Example of Jest configuration without an extra resolver:
+
+```javascript
+// ...
+
+moduleNameMapper: {
+    "@cgnal/([^/]+)/(.+)": "<rootDir>/node_modules/@cgnal/$1/src/$2"
+},
+transformIgnorePatterns: ["node_modules/(?!@cgnal)"],
+
+// ...
+```
+
+Example of Jest configuration with the extra resolver:
 
 ```javascript
 // ...
@@ -58,13 +71,14 @@ transformIgnorePatterns: ["node_modules/(?!@cgnal)"],
 
 [`eslint-plugin-import`](https://github.com/import-js/eslint-plugin-import) still have to support the aforementioned exports field.
 You can refer to [this issue](https://github.com/import-js/eslint-plugin-import/issues/1868) to track the situation.
+
 In the meanwhile you can add a custom resolver such as [`@tophat/eslint-import-resolver-require`](https://github.com/tophat/eslint-import-resolver-require) and tweak your configuration to use it:
 
 ```javascript
 // ...
 
 "settings": {
-    "import/resolver": "@tophat/eslint-import-resolver-require",
+    "import/resolver": "@tophat/eslint-import-resolver-require"
 }
 
 // ...
