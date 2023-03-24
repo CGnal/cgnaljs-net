@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Installing dev dependencies
         run: npm ci
@@ -24,7 +24,7 @@ jobs:
         run: npm run coverage
 
       - name: Send coverage to coveralls.io
-        uses: coverallsapp/github-action@1.1.3
+        uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -40,7 +40,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Installing dev dependencies
         run: npm ci
